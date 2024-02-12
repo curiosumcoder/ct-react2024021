@@ -2,28 +2,37 @@
 Material relacionado con el curso de React impartido para UCenfotec en Febrero 2024. Grupo 1.
 
 ### Requerimientos de software
-* Microsoft Visual Studio Code https://code.visualstudio.com/
- <br/>Instalar o actualizar a la última versión.
- <br/>Agregar la extensión ES7+ React/Redux/React-Native snippets, https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets.
+* Microsoft Visual Studio Code\
+https://code.visualstudio.com/\
+Instalar o actualizar a la última versión.\
+    * Agregar la extensión **ES7+ React/Redux/React-Native snippets**.
+    * Agregar la extensión **ESLint**.
+    * Agregar la extensión **Prettier - Code formatter**.
+    * Agregar la extensión **Material Icon Theme**.
+    * Agregar la extensión **ritwickdey.LiveServer**.
 	
-* Node.js
- <br/>https://nodejs.org/en/download/.
- <br/>Instalar la última versión LTS (Long Term Support).
- <br/>Se puede comprobar la versión por medio de la línea de comandos con: node --version.
+* Node.js\
+https://nodejs.org/en/download/.\
+Instalar la última versión LTS (Long Term Support).\
+Se puede comprobar la versión por medio de la línea de comandos con: node --version.
 	
-* NPM actualizado
- <br/>Ese se incluye con parte del Nodejs, pero se necesita la última versión.
- <br/>Se puede comprobar la versión por medio de la línea de comandos con: npm --version.
- <br/>Para actualizarlo se ejecuta desde la línea de comandos y ejecutando como administrador: npm i npm -g.
+* NPM actualizado\
+Ese se incluye con parte del Nodejs, pero se necesita la última versión.\
+Se puede comprobar la versión por medio de la línea de comandos con: npm --version.\
+Para actualizarlo se ejecuta desde la línea de comandos y ejecutando como administrador: npm i npm -g.
  
-* live-server
- <br>live-server es un pequeño servidor de HTTP, útil para pruebas locales. Es una aplicación escrita en nodejs.
- <br>Se instala ejecutando desde la línea de comandos: npm i live-server -g
- <br/>Se puede comprobar la versión instalada por medio de la línea de comandos con: live-server --version.
+* live-server\
+live-server es un pequeño servidor de HTTP, útil para pruebas locales. Es una aplicación escrita en nodejs.\
+Se instala ejecutando desde la línea de comandos: npm i live-server -g\
+Se puede comprobar la versión instalada por medio de la línea de comandos con: live-server --version.
  
- * json-server
-<br>json-server es un pequeño servidor de REST sobre archivos de datos JSON, útil para pruebas locales. Es una aplicación escrita en nodejs.
-<br>Se instala ejecutando desde la línea de comandos: npm i json-server@0.17.4 -g
-<br>Se puede comprobar la versión instalada por medio de la línea de comandos con: json-server --version.
+ * json-server\
+ json-server es un pequeño servidor de REST sobre archivos de datos JSON, útil para pruebas locales. Es una aplicación escrita en nodejs.\
+ Se instala ejecutando desde la línea de comandos: npm i json-server@0.17.4 -g
+ \Se puede comprobar la versión instalada por medio de la línea de comandos con: json-server --version.
+
+* Postman\
+    https://www.postman.com/downloads/\
+    Utilidad para efecuar pruebas del APIs REST.
 
 * Acceso a Internet. Pues todas las dependencias de paquetes están disponibles a través de la web.
