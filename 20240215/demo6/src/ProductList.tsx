@@ -1,4 +1,3 @@
-import React from "react";
 import IProduct from "./model/IProduct";
 
 type productListProps = {
