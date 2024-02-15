@@ -3,7 +3,7 @@ import ISupplier from "./ISupplier";
 
 export default interface IProduct
 {
-    productID: number;
+    id: number;
     productName: string;
     supplierID: number;
     categoryID: number;

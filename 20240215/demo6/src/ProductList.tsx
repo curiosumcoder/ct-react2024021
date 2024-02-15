@@ -22,8 +22,8 @@ function ProductList({ products, onSelect }: productListProps) {
           </thead>
           <tbody>
             {products.map((p: IProduct) => (
-              <tr key={p.productID}>
-                <td>{p.productID}</td>
+              <tr key={p.id}>
+                <td>{p.id}</td>
                 <td>{p.productName}</td>
                 <td>{p.unitPrice}</td>
                 <td>{p.category?.categoryName ?? ""}</td>

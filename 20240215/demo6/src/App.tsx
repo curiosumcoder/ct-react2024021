@@ -6,6 +6,7 @@ import IProduct from './model/IProduct'
 
 function App() {
   const [productsList, setProductsList] = useState(Array<IProduct>())
+  const [productoSeleccionado, setProductoSeleccionado] = useState<IProduct | undefined>()
   return (
     <>
       <nav className="navbar bg-light">
@@ -19,7 +20,9 @@ function App() {
       <div className="container" style={{ marginTop: "1em" }}>
         {productsList.length}
         <ProductSearch onResults={(r: Array<IProduct>) => setProductsList(r) } />
-        <ProductList products={productsList} />
+        <p>{productoSeleccionado?.productName}</p>
+        <ProductList products={productsList}
+        onSelect={(p: IProduct) => setProductoSeleccionado(p)} />
       </div>      
     </>
   )
