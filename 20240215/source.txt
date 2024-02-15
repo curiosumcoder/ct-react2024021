@@ -14,6 +14,13 @@ App.tsx
 -------------------------------------------------------------------------
 ProductList.tsx
 
+type productListProps = {
+  products: Array<IProduct>;
+  onSelect?: (p: IProduct) => void;
+};
+
+......
+
   useEffect(() => {
     console.log("After render component ...");
     // console.log("ProductList", JSON.stringify(products));
@@ -61,6 +68,10 @@ ProductList.tsx
 -------------------------------------------------------------------------
 ProductSearch.tsx
 
+type productSearchProps = { onResults?: (r: Array<IProduct>) => void };
+
+  ....
+  
   const searchAsync = async (event: SyntheticEvent) => {
     event.preventDefault();
     const filter = iFilter.current?.value ?? "";
