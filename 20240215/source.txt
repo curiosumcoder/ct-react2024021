@@ -54,7 +54,7 @@ type productListProps = {
                 <td>{p.category?.categoryName ?? ''}</td>
                 <td><i className="bi bi-plus-circle-fill" 
                 style={{color:"green", cursor:"pointer"}} 
-                onClick={()=> onSelected?.(p)}></i></td>
+                onClick={()=> onSelect?.(p)}></i></td>
               </tr>
             ))}
           </tbody>
@@ -72,7 +72,7 @@ type productSearchProps = { onResults?: (r: Array<IProduct>) => void };
 
   ....
   
-  const searchAsync = async (event: SyntheticEvent) => {
+  const search = async (event: SyntheticEvent) => {
     event.preventDefault();
     const filter = iFilter.current?.value ?? "";
     if (filter) {
