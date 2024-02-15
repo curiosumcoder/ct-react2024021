@@ -54,7 +54,7 @@ type productListProps = {
                 <td>{p.category?.categoryName ?? ''}</td>
                 <td><i className="bi bi-plus-circle-fill" 
                 style={{color:"green", cursor:"pointer"}} 
-                onClick={()=> onSelected(p)}></i></td>
+                onClick={()=> onSelected?.(p)}></i></td>
               </tr>
             ))}
           </tbody>
