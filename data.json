@@ -2405,6 +2405,12 @@
       "unitPrice": "150",
       "quantityPerUnit": "1 por kilo",
       "id": 78
+    },
+    {
+      "productName": "Sandía Roja",
+      "unitPrice": "7500",
+      "quantityPerUnit": "Bolsa por kilo",
+      "id": 79
     }
   ]
 }

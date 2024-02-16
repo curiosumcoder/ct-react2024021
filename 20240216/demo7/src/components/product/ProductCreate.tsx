@@ -37,7 +37,8 @@ function ProductCreate({ onCreate }: productCreateProps) {
   return (
     <>
       <h6>Product Create</h6>
-      {/* {JSON.stringify(product)} */}
+      {isValid} <br/>
+      {JSON.stringify(product)}
       <form onSubmit={(event) => handleSubmit(event)} ref={form}>
         <div className="mb-3">
           <label htmlFor="iName" className="form-label">

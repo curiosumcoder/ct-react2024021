@@ -6,6 +6,7 @@ import ProductSearch from "./components/product/ProductSearch";
 import ProductList from "./components/product/ProductList";
 import IProduct from "./models/IProduct";
 import AppState from "./models/AppState";
+import ProductEdit from "./components/product/ProductEdit";
 
 function App() {
   const [appState, setAppState] = useState(AppState.Search);
@@ -26,12 +27,17 @@ function App() {
         </div>
       </nav>
       <div className="container" style={{ marginTop: "1em", backgroundColor: "white" }}>
+        {appState}<br/>
         {appState === AppState.Create && (
           <ProductCreate onCreate={() => setAppState(AppState.Search)} />
         )}
 
         {appState === AppState.Details &&  (
           <ProductDetail id={productId} />
+        )}
+
+        {appState === AppState.Edit &&  (
+          <ProductEdit id={productId} onEdit={() => setAppState(AppState.Search)} />
         )}
 
         {appState === AppState.Search && (
@@ -49,6 +55,10 @@ function App() {
               onSelect={(p) => {
                 setProductId(p.id);
                 setAppState(AppState.Details);
+              }}
+              onEdit={(p) => {
+                setProductId(p.id);
+                setAppState(AppState.Edit);
               }}
             />
           </>

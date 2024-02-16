@@ -4,9 +4,10 @@ import IProduct from "../../models/IProduct";
 type productListProps = {
   products?: Array<IProduct>;
   onSelect?: (p: IProduct) => void;
+  onEdit?: (p: IProduct) => void;  
 };
 
-function ProductList({ products, onSelect }: productListProps) {
+function ProductList({ products, onSelect, onEdit }: productListProps) {
   return (
     <>
       {products && products.length > 0 && (
@@ -19,6 +20,7 @@ function ProductList({ products, onSelect }: productListProps) {
                 <th>Name</th>
                 <th>Unit Price</th>
                 <th>Category</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
@@ -34,6 +36,13 @@ function ProductList({ products, onSelect }: productListProps) {
                       className="bi bi-caret-right"
                       style={{ color: "green", cursor: "pointer" }}
                       onClick={() => onSelect?.(p)}
+                    ></i>
+                  </td>
+                  <td>
+                    <i
+                      className="bi bi-pencil-square"
+                      style={{ color: "gray", cursor: "pointer" }}
+                      onClick={() => onEdit?.(p)}
                     ></i>
                   </td>
                 </tr>
