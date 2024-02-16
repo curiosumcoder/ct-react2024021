@@ -1,0 +1,106 @@
+App.tsx
+
+      <nav className="navbar bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            App
+          </a>
+        </div>
+      </nav>
+      <div className="container" style={{ marginTop: "1em" }}>
+        <h1>App</h1>
+      </div>
+	  
+-------------------------------------------------------------------------
+ProductList.tsx
+
+type productListProps = {
+  products: Array<IProduct>;
+  onSelect?: (p: IProduct) => void;
+};
+
+......
+
+  useEffect(() => {
+    console.log("After render component ...");
+    // console.log("ProductList", JSON.stringify(products));
+    return () => {
+      console.log("Clean-up component ...");
+    };
+  },[]);
+  
+......
+
+  if (products && products.length > 0) {
+    return (
+      <>
+        <h6>Product List</h6>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+            <th>Id</th>
+              <th>Name</th>
+              <th>Unit Price</th>
+              <th>Category</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p: IProduct) => (
+              <tr key={p.id}>
+                <td>{p.id}</td>
+                <td>{p.productName}</td>
+                <td>{p.unitPrice}</td>
+                <td>{p.category?.categoryName ?? ''}</td>
+                <td><i className="bi bi-plus-circle-fill" 
+                style={{color:"green", cursor:"pointer"}} 
+                onClick={()=> onSelect?.(p)}></i></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    );
+  } else {
+    return <p className="alert alert-info">No data to show!</p>;
+  }
+
+-------------------------------------------------------------------------
+ProductSearch.tsx
+
+type productSearchProps = { onResults?: (r: Array<IProduct>) => void };
+
+  ....
+  
+  const search = async (event: SyntheticEvent) => {
+    event.preventDefault();
+    const filter = iFilter.current?.value ?? "";
+    if (filter) {
+      console.log(`Searching REST service for ${filter} ...`);
+      const ps = new ProductService();
+      try {
+        const filtered = await ps.search(filter);
+
+        onResults?.(filtered);
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  };
+  
+  ....
+ 
+    <div className="mb-3">
+      <h6>Product Search</h6>
+      <form className="row g-3" onSubmit={(event) => search(event)}>
+        <input
+          type="search"
+          className="form-control"
+          placeholder="Search here ..."
+          ref={iFilter}
+        />
+        <button type="submit" className="btn btn-primary">
+          Search
+        </button>
+      </form>
+    </div>
