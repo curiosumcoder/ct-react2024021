@@ -2401,28 +2401,10 @@
       }
     },
     {
-      "id": 83,
-      "productName": "aasdfas",
-      "unitPrice": 12,
-      "quantityPerUnit": "sasasdf"
-    },
-    {
-      "id": 84,
       "productName": "Demostración",
-      "unitPrice": "123",
-      "quantityPerUnit": ""
-    },
-    {
-      "id": 85,
-      "productName": "ABC",
-      "unitPrice": "123",
-      "quantityPerUnit": ""
-    },
-    {
-      "id": 86,
-      "productName": "Demo 123",
-      "unitPrice": "456",
-      "quantityPerUnit": ""
+      "unitPrice": "150",
+      "quantityPerUnit": "1 por kilo",
+      "id": 78
     }
   ]
 }
