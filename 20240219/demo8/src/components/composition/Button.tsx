@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Specialization
 
+// <Button id="b1">Demostración</Button>
 function Button({children,...props}:any) {
   return (
     <>

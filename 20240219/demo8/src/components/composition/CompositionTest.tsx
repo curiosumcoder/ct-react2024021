@@ -6,7 +6,7 @@ function CompositionTest() {
   return (
     <>
       <hr />
-      <h5>CompositionTest - Specialization</h5>
+      <h5>CompositionTest - Specialization</h5>      
       <Button>Demostración</Button>
       <ButtonSuccess>Success</ButtonSuccess>
       <ButtonSubmit>Submit</ButtonSubmit>
