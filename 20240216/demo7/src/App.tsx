@@ -33,6 +33,10 @@ function App() {
         )}
 
         {appState === AppState.Details &&  (
+          // <ProductDetail id={productId} 
+          // name={'Sandía'} peso={'1 Kg'}
+          // fn1={(msg) => console.log('Ejecuntando a fn1' + msg)}
+          // />
           <ProductDetail id={productId} />
         )}
 

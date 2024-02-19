@@ -2,8 +2,24 @@ import { useEffect, useMemo, useState} from 'react';
 import IProduct from '../../models/IProduct';
 import ProductService from '../../services/ProductService';
 
-function ProductDetail({id}: {id: number}) {
 
+// {id: 1, name: 'Sandía', peso: '1 Kg', unitPrice: 777}
+//function ProductDetail({id}: {id: number}) {
+//function ProductDetail({id,name,fn1}:{id:number, name:string, fn1:(msg:string)=>void}) {
+// type productDetailProps = {id:number, name:string, fn1:(msg:string)=>void}
+// function ProductDetail({id,name='Demo',fn1}:productDetailProps) {  
+function ProductDetail({id}:{id:number}) {    
+  //{id,name}
+  //console.log(props);
+  //props.fn1('DEMO')
+  //console.log(name)
+  //fn1('DEMO')
+  // console.log(`${props.id}, ${props.name}, ${props.peso}, ${props.unitPrice}`);
+
+  // let {id:productId, name, peso, unitPrice} = props; // Destructuring
+  // console.log(`${productId}, ${name}, ${peso}, ${unitPrice}`)
+
+  //const id = 1;
   const ps = useMemo(() => new ProductService(), []);
   const [product, setProduct] = useState<IProduct|null>();  
 
