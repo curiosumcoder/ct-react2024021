@@ -5,6 +5,7 @@ import ProductMain from "./components/product/ProductMain";
 import ProductIndex from "./components/product/ProductIndex";
 import ProductCreate from "./components/product/ProductCreate";
 import ProductDetail from "./components/product/ProductDetail";
+import { productLoader } from "./loaders/productLoader";
 
 const router = createBrowserRouter([
   { 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             children: [
                 { index: true, element: <ProductIndex />},
                 { path: 'create', element: <ProductCreate />},
-                { path: 'detail/:id', element: <ProductDetail />},
+                { path: 'detail/:id', element: <ProductDetail />, loader: productLoader},
             ]
         },
     ]

@@ -1,12 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
 
 function App() {
+  const navigation = useNavigation();
   return (
     <>
       <Header />
+      {navigation.state}
       <div className="container" style={{ marginTop: "2em" }}>
+        <div id="processing" 
+        className={navigation.state === "loading" ? "loading" : "loading"} 
+        >Processing ...</div>
         <Outlet />
       </div>
     </>

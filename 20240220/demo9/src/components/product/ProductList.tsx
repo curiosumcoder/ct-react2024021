@@ -30,7 +30,7 @@ function ProductList({ products }: productListProps) {
                   <td>{p.unitPrice}</td>
                   <td>{p.category?.categoryName ?? ""}</td>
                   <td>
-                    <Link to={`detail/${p.id}`}>
+                    <Link to={`detail/${p.id}?name=${p.productName}`}>
                       <i
                         className="bi bi-caret-right"
                         style={{ color: "green", cursor: "pointer" }}

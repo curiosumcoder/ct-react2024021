@@ -1,0 +1,9 @@
+#processing {
+  visibility: hidden;
+}
+
+#processing .loading {
+  height: 2em;
+  background-color: red;
+  visibility: visible;
+}

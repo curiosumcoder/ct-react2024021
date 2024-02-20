@@ -1,32 +1,36 @@
 import { useEffect, useMemo, useState } from "react";
 import IProduct from "../../models/IProduct";
 import ProductService from "../../services/ProductService";
-import { useLoaderData, useParams } from "react-router-dom";
+import { json, useLoaderData, useParams, useSearchParams } from "react-router-dom";
 
 function ProductDetail() {
+  // Para querystring
+  const [searchParams, ] = useSearchParams(); // ?p1=ABC
+  console.log('searchParams: ' + searchParams.get('name'));
+
   // Opción #1
-  const ps = useMemo(() => new ProductService(), []);
-  const [product, setProduct] = useState<IProduct | null>();
+  // const ps = useMemo(() => new ProductService(), []);
+  // const [product, setProduct] = useState<IProduct | null>();
 
-  const parametros = useParams();
-  console.log(parametros);
+  // const parametros = useParams();
+  // console.log('useParams: ' + JSON.stringify(parametros));
 
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  useEffect(() => {
-    console.log("After render component ...");
+  // useEffect(() => {
+  //   console.log("After render component ...");
 
-    (async () => {
-      setProduct(await ps.get(Number(id)));
-    })();
+  //   (async () => {
+  //     setProduct(await ps.get(Number(id)));
+  //   })();
 
-    return () => {
-      console.log("Clean-up component ...");
-    };
-  }, [ps, id]);
+  //   return () => {
+  //     console.log("Clean-up component ...");
+  //   };
+  // }, [ps, id]);
 
   // Opción 2
-  // const product: IProduct = useLoaderData() as IProduct;
+  const product: IProduct = useLoaderData() as IProduct;
 
   return (
     <>
