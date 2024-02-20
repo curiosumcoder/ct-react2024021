@@ -3,6 +3,8 @@ import App from "./App";
 import Error from "./Error";
 import ProductMain from "./components/product/ProductMain";
 import ProductIndex from "./components/product/ProductIndex";
+import ProductCreate from "./components/product/ProductCreate";
+import ProductDetail from "./components/product/ProductDetail";
 
 const router = createBrowserRouter([
   { 
@@ -15,8 +17,8 @@ const router = createBrowserRouter([
             element: <ProductMain />,
             children: [
                 { index: true, element: <ProductIndex />},
-                { path: 'create', element: <h3>Create Product</h3> },
-                { path: 'detail/:id', element: <h3>Product Details</h3> },
+                { path: 'create', element: <ProductCreate />},
+                { path: 'detail/:id', element: <ProductDetail />},
             ]
         },
     ]

@@ -1,43 +1,32 @@
 import { useEffect, useMemo, useState } from "react";
 import IProduct from "../../models/IProduct";
 import ProductService from "../../services/ProductService";
+import { useLoaderData, useParams } from "react-router-dom";
 
-type productDetailProps = {
-  id: number;
-  name: string;
-  price: number;
-  fn1?: (msg:string) => void;
-};
-
-function ProductDetail({ id }: {id:number}) {
-
-// function ProductDetail({ id, name, price, fn1 }: productDetailProps) {
-  //function ProductDetail({id, name, price}:{id:number, name:string, price:number}) {
-
-  // console.log(name, price);
-  // fn1?.('esta es una prueba');
-
-  // console.log(props)
-  // console.log(`${props.id}, ${props.name}, ${props.price}`)
-
-  // const {id:productId, name, price} = props; // Destructuring
-  // console.log(`${productId}, ${name}, ${price}`)
-
+function ProductDetail() {
+  // Opción #1
   const ps = useMemo(() => new ProductService(), []);
   const [product, setProduct] = useState<IProduct | null>();
 
-  //const id = 1;
+  const parametros = useParams();
+  console.log(parametros);
+
+  const { id } = useParams();
+
   useEffect(() => {
     console.log("After render component ...");
 
     (async () => {
-      setProduct(await ps.get(id));
+      setProduct(await ps.get(Number(id)));
     })();
 
     return () => {
       console.log("Clean-up component ...");
     };
   }, [ps, id]);
+
+  // Opción 2
+  // const product: IProduct = useLoaderData() as IProduct;
 
   return (
     <>
@@ -68,8 +57,3 @@ function ProductDetail({ id }: {id:number}) {
 }
 
 export default ProductDetail;
-
-// function suma(a:number,b:number) {
-//   return a + b;
-// }
-// suma({},'2');

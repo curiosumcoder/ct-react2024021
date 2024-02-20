@@ -2411,6 +2411,18 @@
       "unitPrice": "555",
       "quantityPerUnit": "Bolsa por libra",
       "id": 79
+    },
+    {
+      "productName": "Naranjas",
+      "unitPrice": "1500",
+      "quantityPerUnit": "Bolsa de 10",
+      "id": 80
+    },
+    {
+      "productName": "Mandarina",
+      "unitPrice": "12345",
+      "quantityPerUnit": "Bolsa de 5",
+      "id": 81
     }
   ]
 }

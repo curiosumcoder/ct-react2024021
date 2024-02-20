@@ -1,13 +1,11 @@
+import { Link } from "react-router-dom";
 import IProduct from "../../models/IProduct";
-
 
 type productListProps = {
   products?: Array<IProduct>;
-  onSelect?: (p: IProduct) => void;
-  onEdit?: (p: IProduct) => void;  
 };
 
-function ProductList({ products, onSelect, onEdit }: productListProps) {
+function ProductList({ products }: productListProps) {
   return (
     <>
       {products && products.length > 0 && (
@@ -32,17 +30,17 @@ function ProductList({ products, onSelect, onEdit }: productListProps) {
                   <td>{p.unitPrice}</td>
                   <td>{p.category?.categoryName ?? ""}</td>
                   <td>
-                    <i
-                      className="bi bi-caret-right"
-                      style={{ color: "green", cursor: "pointer" }}
-                      onClick={() => onSelect?.(p)}
-                    ></i>
+                    <Link to={`detail/${p.id}`}>
+                      <i
+                        className="bi bi-caret-right"
+                        style={{ color: "green", cursor: "pointer" }}
+                      ></i>
+                    </Link>
                   </td>
                   <td>
                     <i
                       className="bi bi-pencil-square"
                       style={{ color: "gray", cursor: "pointer" }}
-                      onClick={() => onEdit?.(p)}
                     ></i>
                   </td>
                 </tr>
