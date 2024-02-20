@@ -9,9 +9,7 @@ function App() {
       <Header />
       {navigation.state}
       <div className="container" style={{ marginTop: "2em" }}>
-        <div id="processing" 
-        className={navigation.state === "loading" ? "loading" : "loading"} 
-        >Processing ...</div>
+        <div id="overlay" className={navigation.state === "loading" ? "loading" : ""}>Processing ...</div>
         <Outlet />
       </div>
     </>
