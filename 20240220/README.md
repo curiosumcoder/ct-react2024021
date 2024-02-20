@@ -1,5 +1,5 @@
 * npm create vite@latest demo9 -- --template react-ts
-* npm i bootstrap bootstrap-icons axios
+* npm i bootstrap bootstrap-icons axios react-router-dom
 
 * import 'bootstrap/dist/css/bootstrap.min.css'
 * import 'bootstrap-icons/font/bootstrap-icons.min.css'
