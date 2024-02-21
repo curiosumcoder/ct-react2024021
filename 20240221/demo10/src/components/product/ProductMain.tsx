@@ -1,38 +1,47 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Redux/Redux Toolkit
 import { useDispatch, useSelector } from "react-redux";
-import { searchProducts } from "../../state/productSlice";
+import productSlice, { searchProducts } from "../../state/productSlice";
 import IProduct from "../../models/IProduct";
 import { useNavigate } from "react-router-dom";
 import cartSlice from "../../state/cartSlice";
+import { useEffect } from "react";
 
 function ProductMain() {
   const navigate = useNavigate();
 
   // Redux/Redux Toolkit
   // Read from state on global store
-  const { data, } = useSelector((store: any) => store.products);
+  const { data, filter } = useSelector((store: any) => store.products);
 
   // Update state in global store
   const { addToCart } = cartSlice.actions;
-  
+
+  const { setFilter } = productSlice.actions;
+
   // To execute actions on store
   const dispatch = useDispatch<any>();
 
   return (
     <>
       <h3>Product</h3>
+      {filter}
       <input
         className="form-control"
         type="search"
         placeholder="Type here ..."
-        onChange={(event) => dispatch(searchProducts(event.target.value))}
+        value={filter}
+        onChange={(event) => {
+          const v = event.target.value;
+          dispatch(setFilter(v));
+          dispatch(searchProducts(v));
+        }}
       />
       <br />
       {data.length > 0 && (
         <table className="table table-bordered table-striped">
           <thead>
-          <tr>
+            <tr>
               <th>Name</th>
               <th>Price</th>
               <th></th>
@@ -63,3 +72,7 @@ function ProductMain() {
 }
 
 export default ProductMain;
+function useState(arg0: string): [any, any] {
+  throw new Error("Function not implemented.");
+}
+

@@ -23,6 +23,8 @@ function CartMain() {
               <tr>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
                 <th></th>
               </tr>
             </thead>
@@ -31,6 +33,8 @@ function CartMain() {
                 <tr key={p.id}>
                   <td>{p.productName}</td>
                   <td>{p.unitPrice}</td>
+                  <td>{p.quantity}</td>
+                  <td>{p.unitPrice * p.quantity}</td>
                   <td>
                     <i
                       className="bi bi-bag-dash-fill"
@@ -43,6 +47,7 @@ function CartMain() {
             </tbody>
             <tfoot>
               <tr>
+                <th colSpan={2}></th>
                 <th>Total</th>
                 <td colSpan={2}>
                   {items.reduce((a: number, c: IProduct) => a + c.unitPrice, 0)}

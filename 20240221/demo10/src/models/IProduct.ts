@@ -15,4 +15,5 @@ export default interface IProduct
     discontinued?: boolean;
     category?: ICategory;
     supplier?: ISupplier;
+    quantity: number;
 }

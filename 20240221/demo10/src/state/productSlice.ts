@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import ProductService from "../services/ProductService";
 import IProduct from "../models/IProduct";
+import { act } from "react-dom/test-utils";
 
 export const searchProducts = createAsyncThunk("search-products",
   async (filter: string) => {
@@ -12,10 +13,16 @@ export const searchProducts = createAsyncThunk("search-products",
 const productSlice = createSlice({
   name: "products",
   initialState: {
+    filter: '',
     data: Array<IProduct>(),
-    fetchStatus: "",
+    fetchStatus: ''
   },
-  reducers: {},
+  reducers: {
+    setFilter: (state, action) => {
+      console.log(action.payload)
+      state.filter = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(searchProducts.fulfilled, (state, action) => {
