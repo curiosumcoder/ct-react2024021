@@ -5,7 +5,6 @@ import productSlice, { searchProducts } from "../../state/productSlice";
 import IProduct from "../../models/IProduct";
 import { useNavigate } from "react-router-dom";
 import cartSlice from "../../state/cartSlice";
-import { useEffect } from "react";
 
 function ProductMain() {
   const navigate = useNavigate();
