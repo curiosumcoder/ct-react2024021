@@ -7,12 +7,12 @@ const cartSlice = createSlice({
         items: Array<IProduct>()
     },
     reducers: {
-        addToCart : (state, action) => {            
+        addToCart : (state, action) => {    
             // Si el producto no está en el carrito se agrega
             if (state.items.findIndex(p=> p.id === action.payload.id) === -1)
             {
                 state.items = [action.payload, ...state.items]
-            }
+            } 
         },
         removeFromCart : (state, action) => {
             state.items = state.items.filter(p => p.id !== action.payload.id)

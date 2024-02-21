@@ -11,10 +11,11 @@ function ProductMain() {
 
   // Redux/Redux Toolkit
   // Read from state on global store
-  const { data, } = useSelector((state: any) => state.products);
-  // Update state in global store
+  const { data, } = useSelector((store: any) => store.products);
+
   // Update state in global store
   const { addToCart } = cartSlice.actions;
+  
   // To execute actions on store
   const dispatch = useDispatch<any>();
 

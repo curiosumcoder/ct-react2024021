@@ -5,7 +5,7 @@ function Header() {
   // Redux/Redux Toolkit
   // Read from state on global store
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { items } = useSelector((state: any) => state.cart);
+  const { items } = useSelector((store: any) => store.cart);
 
   return (
     <>
