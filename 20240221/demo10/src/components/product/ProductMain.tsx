@@ -24,7 +24,7 @@ function ProductMain() {
   return (
     <>
       <h3>Product</h3>
-      {filter}
+      {/* {filter} */}
       <input
         className="form-control"
         type="search"
