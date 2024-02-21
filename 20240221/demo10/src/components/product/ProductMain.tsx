@@ -71,7 +71,3 @@ function ProductMain() {
 }
 
 export default ProductMain;
-function useState(arg0: string): [any, any] {
-  throw new Error("Function not implemented.");
-}
-
