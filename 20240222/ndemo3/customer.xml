@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customers>
+  <customer>
+    <id>ALFKI</id>
+    <companyName>Alfreds Futterkiste</companyName>
+    <contactName>Maria Anders</contactName>
+  </customer>
+  <customer>
+    <id>ANATR</id>
+    <companyName>Ana Trujillo Emparedados y helados</companyName>
+    <contactName>Ana Trujillo</contactName>
+  </customer>
+  <customer>
+    <id>ANTON</id>
+    <companyName>Antonio Moreno Taquería</companyName>
+    <contactName>Antonio Moreno</contactName>
+  </customer>
+  <customer>
+    <id>AROUT</id>
+    <companyName>Around the Horn</companyName>
+    <contactName>Thomas Hardy</contactName>
+  </customer>
+  <customer>
+    <id>BERGS</id>
+    <companyName>Berglunds snabbköp</companyName>
+    <contactName>Christina Berglund</contactName>
+  </customer>
+  <customer>
+    <id>BLAUS</id>
+    <companyName>Blauer See Delikatessen</companyName>
+    <contactName>Hanna Moos</contactName>
+  </customer>
+  <customer>
+    <id>BLONP</id>
+    <companyName>Blondesddsl père et fils</companyName>
+    <contactName>Frédérique Citeaux</contactName>
+  </customer>
+  <customer>
+    <id>BOLID</id>
+    <companyName>Bólido Comidas preparadas</companyName>
+    <contactName>Martín Sommer</contactName>
+  </customer>
+</customers>

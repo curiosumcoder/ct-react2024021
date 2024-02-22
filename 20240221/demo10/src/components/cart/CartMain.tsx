@@ -50,7 +50,7 @@ function CartMain() {
                 <th colSpan={2}></th>
                 <th>Total</th>
                 <td colSpan={2}>
-                  {items.reduce((a: number, c: IProduct) => a + c.unitPrice, 0)}
+                  {items.reduce((a: number, c: IProduct) => a + (c.unitPrice*c.quantity), 0)}
                 </td>
               </tr>
             </tfoot>
