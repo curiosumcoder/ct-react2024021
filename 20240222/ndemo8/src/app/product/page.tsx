@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function AboutIndex() {
+export default function ProductIndex() {
   return (
     <>
-      <h1>About</h1>
+      <h1>Product</h1>
       {new Date().toLocaleTimeString()}
     </>
   )
