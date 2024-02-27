@@ -23,8 +23,8 @@ export default class ProductService {
     let url = `${PRODUCT_URL}/search/${filter}`;
     //console.log(`URL: ${url}`);
 
-    let response = await fetch(url);
-    //let response = await fetch(url, { cache: 'no-store' });
+    //let response = await fetch(url);
+    let response = await fetch(url, { cache: 'no-store' });
     //let response = await fetch(url, { next: { revalidate: 60 } });
 
     let data:Array<IProduct> = [];
