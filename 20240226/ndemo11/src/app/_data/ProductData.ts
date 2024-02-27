@@ -4,7 +4,7 @@ import sqlite3 from "sqlite3";
 const dbFilePath = "./src/app/_data/Northwind.db";
 
 export default class ProductData {
-  get(id: string): Promise<IProduct> {
+  get(id: number): Promise<IProduct> {
     return new Promise<IProduct>((resolve, reject) => {
       let result: IProduct;
 
@@ -15,7 +15,7 @@ export default class ProductData {
         UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued 
         FROM Products WHERE ProductID = ?`;
 
-      console.log(`Quering with if ${id} ...`);
+      console.log(`Querying with id: ${id} ... ${new Date().toLocaleTimeString()}`);
 
       db.get(sql, [id], (err: any, row: any) => {
         if (err) {
@@ -28,7 +28,7 @@ export default class ProductData {
             UnitPrice: unitPrice,
             QuantityPerUnit: quantityPerUnit,
           } = row;
-          result = { id, productName, unitPrice, quantityPerUnit, quantity: 1 };
+          result = { id, productName, unitPrice, quantityPerUnit };
         }
         // close the database connection
         db.close();
@@ -49,7 +49,7 @@ export default class ProductData {
       FROM Products WHERE ProductName LIKE ?`;
 
       filter = `%${filter}%`;
-      console.log(`Quering with filter ${filter} ...`);
+      console.log(`Querying with filter: ${filter} ... ${new Date().toLocaleTimeString()}`);
 
       db.all(sql, [filter], (err: any, rows: any) => {
         if (err) {
@@ -67,8 +67,7 @@ export default class ProductData {
             id,
             productName,
             unitPrice,
-            quantityPerUnit,
-            quantity: 1,
+            quantityPerUnit
           };
           result = [p, ...result];
         });
@@ -117,7 +116,7 @@ export default class ProductData {
   }
 
   update(p: IProduct) {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<number>((resolve, reject) => {
       let result: IProduct;
 
       console.log(p);
@@ -136,7 +135,7 @@ export default class ProductData {
           if (err) {
             reject(err);
           } else {
-            resolve();
+            resolve(this.changes);
           }
 
           // close the database connection
@@ -147,7 +146,7 @@ export default class ProductData {
   }
 
   delete(id: number) {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<number>((resolve, reject) => {
       //sqlite3.verbose();
       let db = new sqlite3.Database(dbFilePath);
 
@@ -157,7 +156,7 @@ export default class ProductData {
         if (err) {
           reject(err);
         } else {
-          resolve();
+          resolve(this.changes);
         }
 
         // close the database connection

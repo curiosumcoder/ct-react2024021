@@ -16,31 +16,33 @@ export default async function ProductDetails({ params }: pdParams) {
     <>
       <h3>Edit</h3>
 
-      <form action={productEdit}>
-        <input type="hidden" name="id" value={id} />
-        <input
-          type="text"
-          name="productName"
-          defaultValue={p.productName}
-          placeholder="productName"
-        />
-        <br />
-        <input
-          type="text"
-          name="quantityPerUnit"
-          defaultValue={p.quantityPerUnit}
-          placeholder="quantityPerUnit"
-        />
-        <br />
-        <input
-          type="number"
-          name="unitPrice"
-          defaultValue={p.unitPrice}
-          placeholder="unitPrice"
-        />
-        <br />
-        <button type="submit">Save</button>
-      </form>
+      {p && (
+        <form action={productEdit}>
+          <input type="hidden" name="id" value={id} />
+          <input
+            type="text"
+            name="productName"
+            defaultValue={p.productName}
+            placeholder="productName"
+          />
+          <br />
+          <input
+            type="text"
+            name="quantityPerUnit"
+            defaultValue={p.quantityPerUnit}
+            placeholder="quantityPerUnit"
+          />
+          <br />
+          <input
+            type="number"
+            name="unitPrice"
+            defaultValue={p.unitPrice}
+            placeholder="unitPrice"
+          />
+          <br />
+          <button type="submit">Save</button>
+        </form>
+      )}
     </>
   );
 }
